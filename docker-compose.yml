@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  app-mongodb:
+    build: 
+      context: .
+    # este servicio se puede usar sin nginx pero debes habilitar los puertos
+    # ports:
+    #   - "91:91"
+    command: uvicorn main:app --reload --proxy-headers --host 0.0.0.0 --port 91
+    expose:
+      - 91
+    volumes:
+      - ./app:/app/
+
+  nginx:
+    image: nginx:latest
+    # ports:
+    #   - "9191:80"
+    environment:
+      - VIRTUAL_PORT=80
+      - VIRTUAL_HOST=wsp-mongo.diego-luque.com
+      - LETSENCRYPT_HOST=wsp-mongo.diego-luque.com
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app-mongodb
+
+networks:
+  default:
+    name: docker-redis_default 
+    external: true
