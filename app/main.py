@@ -4,20 +4,20 @@ from contextlib import asynccontextmanager
 from core.db.database import db
 import uvicorn
 
-# @asynccontextmanager
-# async def app_lifespan(app: FastAPI):
-#     try:
-#         print("Starting up...")
-#         await db.create_indexes()
-#         yield
-#     finally:
-#         print("Shutting down...")
+@asynccontextmanager
+async def app_lifespan(app: FastAPI):
+    try:
+        print("Starting up...")
+        await db.create_indexes()
+        yield
+    finally:
+        print("Shutting down...")
 
-# app = FastAPI(lifespan=app_lifespan)
-app = FastAPI()
+app = FastAPI(lifespan=app_lifespan)
+# app = FastAPI()
 
 
-# app.include_router(router_base)
+app.include_router(router_base)
 
 @app.get('/')
 async def home():
