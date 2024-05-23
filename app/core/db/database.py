@@ -13,7 +13,9 @@ cred = Creden()
 
 class Database:
     def __init__(self):
-        uri = f"mongodb://{cred.MONGO_USER}:{cred.MONGO_PASSWORD}@{cred.MONGO_HOST}/{cred.MONGO_DB}?authSource=admin"
+        uri = f"mongodb://root:example@localhost:27020/lianbot_db?authSource=admin"
+        
+        # uri = f"mongodb://{cred.MONGO_USER}:{cred.MONGO_PASSWORD}@{cred.MONGO_HOST}/{cred.MONGO_DB}?authSource=admin"
         # mongodb://root:example@localhost:27018/lianbot_db?authSource=admin
         self.client = AsyncIOMotorClient(uri)
         self.lianbot_db = self.client["lianbot_db"]
