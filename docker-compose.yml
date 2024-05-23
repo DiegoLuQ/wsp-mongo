@@ -15,8 +15,8 @@ services:
 
   nginx:
     image: nginx:latest
-    # ports:
-    #   - "9191:80"
+    ports:
+      - "9191:80"
     environment:
       - VIRTUAL_PORT=80
       - VIRTUAL_HOST=wsp-mongo.diego-luque.com
