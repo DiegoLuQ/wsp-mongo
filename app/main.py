@@ -8,7 +8,7 @@ import uvicorn
 async def app_lifespan(app: FastAPI):
     try:
         print("Starting up...")
-        await db.create_indexes()
+        # await db.create_indexes()
         yield
     finally:
         print("Shutting down...")
