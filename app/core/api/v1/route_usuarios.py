@@ -32,6 +32,10 @@ async def read_usuario(usuario_id: str):
         return usuario
     raise HTTPException(status_code=404, detail="Usuario not found")
 
+@router.get("/usuarios/")
+async def retrive_usuarios():
+    usuarios = await get_usuarios()
+    return usuarios
 
 @router.patch("/usuarios/{usuario_id}")
 async def put_usuario(usuario_id: str, usuario: dict):

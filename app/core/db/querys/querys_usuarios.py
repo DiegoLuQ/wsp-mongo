@@ -21,6 +21,10 @@ async def get_usuario(usuario_id: str):
     usuario = await db.usuario_col.find_one({"_id": usuario_id})
     return usuario
 
+async def get_usuarios():
+    usuarios = await db.usuario_col.find()
+    return usuarios
+
 async def update_usuario(usuario_id: str, usuario_data: dict):
     try:
         usuario = await db.usuario_col.find_one({'_id': usuario_id},{'_id':0})
