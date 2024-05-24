@@ -45,14 +45,15 @@ class MenuDocumento(BaseModel):
                     alias="_id", validate_default=True)
     numero_celular: str
     nombre_empresa: str
+    active:bool
     flujo_menu: dict[str, Flujo_Menu]
     flujo_submenu: dict[str, Flujo_SubMenu]
     widget_list: dict[str, Flujo_Lista]
-
     model_config: ConfigDict = ConfigDict(arbitrary_types_allowed=True, json_schema_extra={
         "example":   {
             "numero_celular": "56934888609",
             "nombre_empresa": "Lianweb",
+            "active":False,
             "flujo_menu": {
                 "hola": {
                     "type_msg": "Flujo_Menu",
@@ -144,8 +145,7 @@ class MenuDocumento(BaseModel):
                     
                     "link": "https://www.o10media.es/blog/wp-content/uploads/2023/01/tipos-paginas-web.jpg"
                 }
-            },
-            
+            },           
             "widget_list": {
                 #SERVICIOS
                 "pagina_web": {
