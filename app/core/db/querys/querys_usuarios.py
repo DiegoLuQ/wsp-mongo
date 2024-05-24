@@ -22,7 +22,8 @@ async def get_usuario(usuario_id: str):
     return usuario
 
 async def get_usuarios():
-    usuarios = await db.usuario_col.find()
+    usuarios_cursor = db.usuario_col.find({})
+    usuarios = await usuarios_cursor.to_list(length=None)
     return usuarios
 
 async def update_usuario(usuario_id: str, usuario_data: dict):
