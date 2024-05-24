@@ -6,7 +6,7 @@ env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
 class Settings:
-    DB_MONGO = os.environ.get('DB_MONGO')
+    MONGO_URL = os.environ.get('MONGO_URL')
     RUTA_CLUSTER=os.environ.get('RUTA_CLUSTER')
     
     
