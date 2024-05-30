@@ -88,7 +88,7 @@ class MenuDocumento(BaseModel):
                     "hola": {
                         "type_msg": "Flujo_Menu",
                         "body": "¡ Hola !  🌟 ¡Qué emoción tenerte aquí! Soy LianBot, tu asistente virtual personalizado para ayudarte en todo lo que necesites.¿Listo para descubrir todas las increíbles posibilidades que tenemos para ti? ¡Estoy aquí para guiarte en cada paso del camino! \nPuedes navegar por estas opciones:",
-                        "options": ["informacion", "servicios"],
+                        "options": ["Información", "Productos"],
                         "footer": "Equipo Lw",
                         "sed": "1"
 
@@ -96,7 +96,7 @@ class MenuDocumento(BaseModel):
                     "servicios": {
                         "type_msg": "Flujo_Menu",
                         "body": "¡Explora nuestro mundo de soluciones! Desde información de productos hasta detalles de contacto, estamos aquí para ayudarte a alcanzar tus objetivos empresariales.",
-                        "options": ["🍃Pagina Web", "😎 Landing Page", "🤖 Chat bot"],
+                        "options": ["Pagina Web", "Landing Page", "Chat bot"],
                         "footer": "Información Lw | lianweb.cl",
                         "sed": "2"
 
@@ -104,7 +104,7 @@ class MenuDocumento(BaseModel):
                     "informacion": {
                         "type_msg": "Flujo_Menu",
                         "body": "¿En qué podemos ayudarte hoy? Elige una de las siguientes opciones para obtener más información sobre nuestros servicios.",
-                        "options": ["🚩Ubicación", "🧲Redes Sociales", "✅¿Tienen página web?"],
+                        "options": ["Ubicación", "Redes Sociales", "Vendedor"],
                         "footer": "Servicios Lw | lianweb.cl",
                         "sed": "3"
                     }
@@ -179,7 +179,7 @@ class MenuDocumento(BaseModel):
                             }
                         ],
                         "body": "Paginas web de calidad, dale a tus cliente lo mejor",
-                        "header": "Listado de Planes",
+                        "header": "Listado de Páginas web",
                         "footer": "Lw | Calidad y Confianza",
                         "button": "Ver ☑️"
 
@@ -203,8 +203,8 @@ class MenuDocumento(BaseModel):
                                 ]
                             }],
                         "body": "Landing page de calidad, dale a tus cliente lo mejor y en un solo lugar",
-                        "header": "Listado de Planes",
-                        "footer": "Lw | Calidad y Confianza",
+                        "header": "Listado de Lading Pages",
+                        "footer": "Lw | Calidad y Compromiso",
                         "button": "Ver ☑️"
                     },
                     "chat_bot": {
@@ -221,8 +221,8 @@ class MenuDocumento(BaseModel):
                         }
                         ],
                         "body": "Potencia tu negocio con nuestros chatbots inteligentes: automatiza tareas, ofrece atención al cliente 24/7 y aumenta la satisfacción del cliente.",
-                        "header": "Listado de Planes",
-                        "footer": "Lw | Calidad y Confianza",
+                        "header": "Listado de Chatbots",
+                        "footer": "Lw | Compromiso y Dedicación",
                         "button": "Ver ☑️"}
 
                 }

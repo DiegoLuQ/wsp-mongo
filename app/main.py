@@ -8,7 +8,7 @@ import uvicorn
 async def app_lifespan(app: FastAPI):
     try:
         print("Starting up...")
-        # await db.create_indexes()
+        await db.create_indexes()
         yield
     finally:
         print("Shutting down...")
@@ -23,5 +23,5 @@ app.include_router(router_base)
 async def home():
     return {"pme": "2023"}
 
-# if __name__ == "__main__":
-#     uvicorn.run("main:app", host="127.0.0.1", port=8082, reload=True)
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=8082, reload=True)
